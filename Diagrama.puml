@@ -1,0 +1,96 @@
+@startuml
+class Juego{
+- Soldado soldados[]
+- Escenario escenarios[]
+- Prisionero prisioneros[]
+- Nivel niveles [5]
+- Jugador jugadores[2]
+}
+class Prisionero 
+class Fondo{
+    + Modelar(Fondo)
+}
+class Nivel{
+-Zombie zombies[]
+-EfectoVisual efectosVisuales[]
+}
+class EfectoVisual
+class Imagen{
+    +Insertar(Imagen)
+}
+class Escenario
+class Bala{
++Disparar(Bala)
+}
+class Pistola
+class Soldado{
+-Skin aspectos[5]
+-Puntuacion puntuaciones[]
+-Granada granadas[3]
+}
+class Arma{
+-Mejora mejoras[10]
+}
+class Mejora
+class Granada
+class Skin
+class Vida
+class Jugador{
++ Convertir(Jugador)
+- Vida vidas[5]
+}
+class Vehiculo{
++ Conducir(Jugador)
+}
+class Tanque 
+class Submarino
+class Helicoptero
+class Puntuacion
+class Comida
+class Tesoro
+class Rescate
+class Enemigo{
+- Ia inteligencias
+}
+class Ia
+class VehiculoEnemigo{
+    + Conducir(vehiculoEnemigo)
+}
+class Animal
+class Boss
+class Buzo
+class Zombie
+Juego *-- "*" Prisionero
+Juego *-- "*" Escenario
+Juego *-- "*" Soldado
+Juego *-- "2" Jugador
+Juego *-- "5" Nivel
+Soldado --o Jugador
+Jugador o-- "3" Vehiculo
+Zombie --o Jugador
+Vehiculo <|-- Tanque
+Vehiculo <|-- Submarino 
+Vehiculo <|-- Helicoptero
+Soldado <|-- Enemigo
+Enemigo "*" o-- "*" VehiculoEnemigo
+Enemigo *-- Ia
+Enemigo <|-- Animal
+Enemigo <|-- Boss
+Enemigo <|-- Buzo
+Soldado *-- Puntuacion 
+Puntuacion <|-- "*" Comida
+Puntuacion <|-- Tesoro
+Puntuacion <|-- Rescate 
+Jugador *-- "5" Vida
+Soldado o-- Arma
+Soldado *-- "5" Granada
+Arma <|-- Pistola
+Pistola o-- "*" Bala
+Arma <|-- Granada
+Soldado *-- "5" Skin
+Arma *-- "10" Mejora
+Escenario o-- "*" Fondo
+Fondo o-- "*" Imagen
+Nivel *-- "*" EfectoVisual
+Nivel *-- "*" Zombie
+@enduml
