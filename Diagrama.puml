@@ -1,7 +1,7 @@
 @startuml
 class Juego{
 - Soldado soldados[]
-- Escenario escenarios[]
+- Escenario escenarios[]00
 - Prisionero prisioneros[]
 - Nivel niveles [5]
 - Jugador jugadores[2]
