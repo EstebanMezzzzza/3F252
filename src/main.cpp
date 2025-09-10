@@ -1,5 +1,5 @@
-#include <Foco.hpp>
 #include <iostream>
+#include <Foco.hpp>
 using namespace std;
 int main(int argc, char const *argv[])
 {
@@ -8,4 +8,4 @@ int main(int argc, char const *argv[])
     foco.Encender();
     cout << "EstadoFoco: " << foco.LeerEstado() << endl;
     return 0;
-}man
+}
